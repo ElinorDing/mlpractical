@@ -441,7 +441,7 @@ class ConvolutionalDimensionalityReductionBlock_BN(nn.Module):
         out = F.avg_pool2d(out, self.reduction_factor)
 
         out = self.layer_dict['conv_1'].forward(out)
-        out = self.layer_dict['bn_0'].forward(out)
+        out = self.layer_dict['bn_1'].forward(out)
         out = F.leaky_relu(out)
 
         return out
