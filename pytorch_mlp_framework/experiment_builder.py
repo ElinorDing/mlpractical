@@ -159,12 +159,12 @@ class ExperimentBuilder(nn.Module):
                 name_list = name.split('.')
                 layer = name_list[1]+'_'+name_list[0]
                 layers.append(layer)
-                all_grads.append(param.grad.abs().mean().cpu().numpy())
+                all_grads.append(param.grad.abs().mean())
             elif 'weight' in name:
                 name_list = name.split('.')
                 layer = name_list[1]+'_'+name_list[3]
                 layers.append(layer)
-                all_grads.append(param.grad.abs().mean().cpu().numpy())
+                all_grads.append(param.grad.abs().mean())
         
         ########################################
   
